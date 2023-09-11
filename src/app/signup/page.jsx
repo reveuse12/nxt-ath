@@ -38,13 +38,14 @@ export default function Signup() {
       await axios.post("http://localhost:5000/api/users/signup", formData);
       console.log("User created successfully");
       toast.success("Signup successful! Please login");
+      router.push("/login");
     } catch (error) {
       console.error(error);
       toast.error("Signup failed. Please try again.");
     } finally {
       setLoading(false);
     }
-    router.push("/login");
+   
   };
 
   useEffect(() => {
@@ -60,7 +61,7 @@ export default function Signup() {
   }, [ formData ]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-cyan-500 to-pink-400">
+    <div className="min-h-screen flex items-center justify-center bg-slate-200">
       <div className="bg-white text-black p-8 rounded-lg shadow-md w-full max-w-sm">
         <h1 className="text-2xl font-semibold mb-4">
           Hello New User? {loading ? "Creating User" : "Signup here"}

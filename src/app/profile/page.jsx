@@ -32,11 +32,15 @@ export default function ProfilePage() {
   }
 
   return (
-    <>
-    <h1>Profile Page</h1>
-    <div>{ data === 'nothing' ? "Nothing" :<Link href={ `/profile/${ data }`}>{ data }</Link> }</div>
-    <div><button type="button" onClick={ getDetails }>Get User Deatils</button></div>
-    <button onClick={ logout }>Logout</button>
-    </>
+    <div className="bg-gray-300 text-black min-h-screen flex flex-col justify-center items-center">
+            <h1 className="text-3xl font-bold mb-4">Profile Page</h1>
+            <div className="mb-4">
+                {data === 'nothing' ? "Nothing" : <Link href={`/profile/${data}`}><a className="text-blue-500 hover:underline">{data}</a></Link>}
+            </div>
+            <div className="mb-4">
+                <button className="px-4 py-2 bg-white shadow-lg hover:shadow-black text-black rounded-md hover:bg-black hover:text-white" type="button" onClick={getDetails}>Get User Details</button>
+            </div>
+            <button className="px-4 py-2 bg-red-500 shadow-lg hover:shadow-red-400 text-white rounded-md hover:bg-white hover:text-red-500" onClick={logout}>Logout</button>
+    </div>
   )
-} 
+}; 

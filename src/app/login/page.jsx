@@ -42,7 +42,7 @@ export default function LoginPage() {
   }, [formData.username, formData.password]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-cyan-500 to-pink-400">
+    <div className="min-h-screen flex items-center justify-center bg-slate-200">
       <div className="bg-white text-black p-8 rounded-lg shadow-md w-full max-w-sm">
         <h1 className="text-2xl font-bold mb-4">Welcome back!</h1>
         <h2 className="mb-4">{loading ? "Processing" : "Login"}</h2>
